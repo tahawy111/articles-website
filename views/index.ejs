@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="ar">
+  <%- include('./partials/head.ejs') %>
+
+  <body id="body">
+    <%- include('./partials/header.ejs') %>
+    <main id="main">
+      <section>
+        <h1>Trending Articles &#128293;</h1>
+
+        <% data.forEach(item=> { %>
+
+        <article style="display: inline-block">
+          <h2><%= item.title %></h2>
+
+          <p>
+            Summary: <%= item.summary %>
+            <br />
+            Date: <%= item.createdAt.toISOString().split("T")[0] %>
+          </p>
+
+          <a class="btn" href="/all-articles/article-details/<%= item._id %> "
+            >show more</a
+          >
+        </article>
+
+        <% }); %>
+      </section>
+    </main>
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>

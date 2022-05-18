@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs') %>
+  <body>
+    <%- include('./partials/header.ejs') %>
+
+    <h1><%= data.title %></h1>
+    <h3 style="text-align: center; margin: 2rem 0; color: #007bff">
+      Title: <%= data.body %>
+    </h3>
+    <h3 style="text-align: center; margin: 2rem 0; color: #17a2b8">
+      Summary: <%= data.summary %>
+    </h3>
+    <h3 style="text-align: center; margin: 2rem 0; color: #dc3545">
+      Created date: <%= data.createdAt.toISOString().split("T")[0] %>
+    </h3>
+
+    <button
+      style="
+        padding: 5px;
+        background-color: #dc3545;
+        border: none;
+        border-radius: 5px;
+        transform: scale(1.1);
+        margin: 5px 10px;
+        color: #fff;
+      "
+      data-linkid="<%= data._id %> "
+    >
+      <a
+        style="text-decoration: none; color: #fff"
+        href="/all-articles/delete/<%= data._id %>"
+      >
+        Delete this article
+      </a>
+    </button>
+
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>
