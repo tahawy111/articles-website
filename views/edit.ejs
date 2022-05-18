@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+  <%- include('./partials/head.ejs') %>
+
+  <body id="body">
+      <%- include('./partials/header.ejs') %> 
+
+    <main id="main">
+      <section>
+        <h1>Edit article</h1>
+
+        <form method="post" action="/all-articles/update/<%= data._id %>">
+          <label for="title">Article title: </label>
+          <input name="title" value="<%= data.title %>" id="title" type="text" />
+
+          <label for="summary">Article summary: </label>
+          <input name="summary" value="<%= data.summary %>" id="summary" type="text" />
+
+          <label for="body">Article body:</label>
+          <textarea name="body" id="body"><%= data.body %></textarea>
+
+          <button class="create">edit</button>
+        </form>
+      </section>
+    </main>
+
+<%- include('./partials/footer.ejs') %> 
+  </body>
+</html>

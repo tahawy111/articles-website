@@ -12,7 +12,10 @@
       Summary: <%= data.summary %>
     </h3>
     <h3 style="text-align: center; margin: 2rem 0; color: #dc3545">
-      Created date: <%= data.createdAt.toISOString().split("T")[0] %>
+      Created date: <%= data.createdAt%>
+    </h3>
+    <h3 style="text-align: center; margin: 2rem 0; color: #dc3545">
+      Updated date: <%= data.updatedAt%>
     </h3>
 
     <button
@@ -32,6 +35,26 @@
         href="/all-articles/delete/<%= data._id %>"
       >
         Delete this article
+      </a>
+    </button>
+
+    <button
+      style="
+        padding: 5px;
+        background-color: #dcbb35;
+        border: none;
+        border-radius: 5px;
+        transform: scale(1.1);
+        margin: 5px 10px;
+        color: #fff;
+      "
+      data-linkid="<%= data._id %> "
+    >
+      <a
+        style="text-decoration: none; color: #fff"
+        href="/all-articles/edit/<%= data._id %>"
+      >
+        Edit this article
       </a>
     </button>
 
