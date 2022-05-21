@@ -1,12 +1,29 @@
 {
   "dependencies": {
     "connect-livereload": "^0.6.1",
+    "dotenv": "^16.0.1",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "helmet": "^5.1.0",
     "livereload": "^0.9.3",
     "mongoose": "^6.3.3"
   },
   "scripts": {
     "start": "nodemon app.js"
-  }
+  },
+  "name": "articles-website",
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tahawy111/articles-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tahawy111/articles-website/issues"
+  },
+  "homepage": "https://github.com/tahawy111/articles-website#readme",
+  "description": ""
 }

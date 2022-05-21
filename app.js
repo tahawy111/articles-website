@@ -1,12 +1,13 @@
-//  to controll ur website
-
+//  to controll your website
 const express = require("express");
+const router = require("./routes/router");
+const helmet = require("helmet");
+require("dotenv").config();
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
-const router = require("./routes/router");
 
 // mongoose
 const mongoose = require("mongoose");
@@ -23,6 +24,9 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
+
+// to make our app secure
+app.use(helmet());
 
 // routes
 app.use(router);
