@@ -13,9 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 const mongoose = require("mongoose");
 
 mongoose
-  .connect(
-    "mongodb+srv://admin:amer123456@cluster0.fz2cxpc.mongodb.net/articles?retryWrites=true&w=majority"
-  )
+  .connect(process.env.MONGO_URI)
   .then((result) => {
     app.listen(port, () => {
       console.log(`Example app listening at http://localhost:${port}`);
