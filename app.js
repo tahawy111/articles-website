@@ -14,7 +14,7 @@ const mongoose = require("mongoose");
 
 mongoose
   .connect(
-    "mongodb+srv://admin:admin123456@cluster0.rnjss.mongodb.net/articles?retryWrites=true&w=majority"
+    "mongodb+srv://admin:amer123456@cluster0.fz2cxpc.mongodb.net/articles?retryWrites=true&w=majority"
   )
   .then((result) => {
     app.listen(port, () => {
